@@ -8,6 +8,7 @@ import { lightTheme } from "../config/theme"
 import createEmotionCache from "../config/createEmotionCache"
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react"
 import { Inter } from "next/font/google"
+import { appWithTranslation } from "next-i18next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -17,7 +18,7 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
 }
 
-export default function MyApp(props: MyAppProps) {
+function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
   return (
     <CacheProvider value={emotionCache}>
@@ -40,3 +41,5 @@ export default function MyApp(props: MyAppProps) {
     </CacheProvider>
   )
 }
+
+export default appWithTranslation(MyApp)

@@ -9,15 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
     "@emotion/cache": "^11.10.5",
+    "@emotion/react": "^11.11.1",
     "@emotion/server": "^11.10.0",
+    "@emotion/styled": "^11.11.0",
     "@mui/material": "^5.14.2",
     "@next/eslint-plugin-next": "^13.4.12",
+    "i18next": "^23.4.1",
     "next": "13.4.12",
+    "next-i18next": "^14.0.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-i18next": "^13.0.3"
   },
   "devDependencies": {
     "@types/node": "20.4.5",
