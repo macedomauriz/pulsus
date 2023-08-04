@@ -8,7 +8,6 @@ import { lightTheme } from "../config/theme"
 import createEmotionCache from "../config/createEmotionCache"
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react"
 import { Inter } from "next/font/google"
-import { appWithTranslation } from "next-i18next"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -28,7 +27,7 @@ function MyApp(props: MyAppProps) {
       <ThemeProvider theme={lightTheme}>
         <EmotionThemeProvider theme={lightTheme}>
           <CssBaseline />
-          <main className={inter.className} style={{ padding: "0 6%" }}>
+          <main className={inter.className} style={{ padding: "0 8%" }}>
             <style jsx global>{`
               * {
                 font-family: ${inter.style.fontFamily} !important;
@@ -42,4 +41,4 @@ function MyApp(props: MyAppProps) {
   )
 }
 
-export default appWithTranslation(MyApp)
+export default MyApp

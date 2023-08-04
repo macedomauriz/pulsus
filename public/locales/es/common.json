@@ -1,3 +1,7 @@
 {
-  "HELLO_WORLD": "Hola, Mundo!"
+  "hero": {
+    "primary": "Tu nuevo y poderoso asistente personal <mark>impulsado por AI</mark>",
+    "secondary": "Pulsus se integra a la perfección en su rutina, anticipándose a sus necesidades y brindando asistencia oportuna.",
+    "button": "Únete a la waitlist"
+  }
 }

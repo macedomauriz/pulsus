@@ -1,25 +1,32 @@
-import { Typography } from "@mui/material"
+import { Button, Typography } from "@mui/material"
 import Grid from "@mui/material/Unstable_Grid2"
 import SuperImage from "./SuperImage"
-// import styled from "@emotion/styled"
-// import { primaryGradient } from "config/theme"
 
-// const Test = styled(Container)`
-//   background: ${primaryGradient};
-// `
+interface HeroProps {
+  primary: string
+  secondary: string
+  button: string
+}
 
-export default function Hero() {
+export default function Hero({ primary, secondary, button }: HeroProps) {
   return (
-    <Grid container spacing={8} minHeight="100vh">
+    <Grid container spacing={10} minHeight="100vh">
       <Grid xs={6} display="flex" alignItems="center">
         <div>
-          <Typography variant="h2" component="h1" gutterBottom>
-            Tu nuevo y poderoso asistente personal <mark>impulsado por AI</mark>
-          </Typography>
-          <Typography variant="subtitle1" component="h1">
-            Pulsus se integra a la perfección en su rutina, anticipándose a sus
-            necesidades y brindando asistencia oportuna.
-          </Typography>
+          <Typography
+            variant="h1"
+            gutterBottom
+            dangerouslySetInnerHTML={{ __html: primary }}
+          />
+          <Typography
+            variant="subtitle"
+            component="h2"
+            gutterBottom
+            dangerouslySetInnerHTML={{ __html: secondary }}
+          />
+          <Button variant="contained" sx={{ mt: 4 }}>
+            {button}
+          </Button>
         </div>
       </Grid>
       <Grid xs={6} display="flex" justifyContent="center" alignItems="center">
