@@ -2,7 +2,7 @@ import * as React from "react"
 import Head from "next/head"
 import { Container } from "@mui/material"
 import Hero from "components/Hero"
-import { GetStaticProps } from "next"
+import { GetStaticPaths, GetStaticProps } from "next"
 
 export default function Index() {
   const metadata = {
@@ -41,7 +41,15 @@ export default function Index() {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+const locales = ["en", "es", "pr"]
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = locales.map(locale => ({ params: { locale } }))
+  return { paths, fallback: false }
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  // const locale = params.locale
   const data = "hola"
 
   return {
