@@ -7,7 +7,8 @@
     "hero": {
       "primary": "Tu nuevo y poderoso asistente personal <mark>impulsado por AI</mark>",
       "secondary": "Pulsus se integra a la perfección en su rutina, anticipándose a sus necesidades y brindando asistencia oportuna.",
-      "button": "Únete a la waitlist"
+      "button": "Únete a la waitlist",
+      "image": "/hero/pr/chellphones.png"
     },
     "press": {
       "title": "Pulsus en la prensa",
@@ -20,11 +21,13 @@
     "attributes": [
       {
         "title": "Pulsus puede crear un canal de marketing <b>nuevo, más barato y masivo</b>",
-        "subtitle": "Pulsus ejecutará una búsqueda local en múltiples motores, encontrará contactos de WhatsApp / Facebook / Instagram / teléfono y se comunicará con las empresas solicitando información sobre disponibilidad y precios a través de mensajes, en lenguaje natural."
+        "subtitle": "Pulsus ejecutará una búsqueda local en múltiples motores, encontrará contactos de WhatsApp / Facebook / Instagram / teléfono y se comunicará con las empresas solicitando información sobre disponibilidad y precios a través de mensajes, en lenguaje natural.",
+        "image": "/hero/pr/cellphone-straight.png"
       },
       {
         "title": "Apuntamos a facilitar la vida de <b>todos los usuarios, negocios y locales</b>",
-        "subtitle": "Podríamos utilizar nuestro conocimiento, tecnologías y experiencia de campo para continuar desarrollando diferentes productos positivos de alto impacto para las economías emergentes."
+        "subtitle": "Podríamos utilizar nuestro conocimiento, tecnologías y experiencia de campo para continuar desarrollando diferentes productos positivos de alto impacto para las economías emergentes.",
+        "image": "/hero/pr/whatsapp.png"
       }
     ],
     "features": {
