@@ -71,12 +71,12 @@ const themeCommonOptions = {
     },
     // Body
     body: {
-      fontWeight: 300,
+      fontWeight: 400,
       fontSize: "16px",
     },
     // Body
     subtitle: {
-      fontWeight: 300,
+      fontWeight: 400,
       fontSize: "18px",
     },
     // Button
@@ -134,13 +134,38 @@ const lightTheme = createTheme(
             whiteSpace: "nowrap",
             textTransform: "initial",
             borderRadius: 40,
-            paddingTop: 16,
-            paddingBottom: 16,
+            fontWeight: 500,
+            paddingTop: 8,
+            paddingBottom: 8,
             paddingLeft: 22,
             paddingRight: 22,
-            background: grey[900],
           },
         },
+        variants: [
+          {
+            props: { variant: "text" },
+            style: {
+              color: grey[900],
+            },
+          },
+          {
+            props: { variant: "outlined" },
+            style: {
+              border: `2px solid ${grey[900]}`,
+              color: grey[900],
+              "&:hover": {
+                border: `2px solid ${grey[900]}`,
+              },
+            },
+          },
+          {
+            props: { variant: "contained" },
+            style: {
+              background: grey[900],
+              fontWeight: 400,
+            },
+          },
+        ],
       },
     },
   })
@@ -188,8 +213,9 @@ const darkTheme = createTheme(
             whiteSpace: "nowrap",
             textTransform: "initial",
             borderRadius: 40,
-            paddingTop: 16,
-            paddingBottom: 16,
+            fontWeight: 500,
+            paddingTop: 8,
+            paddingBottom: 8,
             paddingLeft: 22,
             paddingRight: 22,
             background: grey[900],

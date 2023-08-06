@@ -11,8 +11,8 @@ interface HeroProps {
 
 export default function Hero({ primary, secondary, button, image }: HeroProps) {
   return (
-    <Grid container spacing={10} minHeight={{ lg: "100vh", xl: "auto" }}>
-      <Grid xs={12} md={6} display="flex" alignItems="center">
+    <Grid container spacing={10} columns={{ lg: 20 }}>
+      <Grid xs={12} md={9} display="flex" alignItems="center">
         <div>
           <Typography
             variant="h1"
@@ -32,12 +32,17 @@ export default function Hero({ primary, secondary, button, image }: HeroProps) {
       </Grid>
       <Grid
         xs={12}
-        md={6}
+        md={11}
         display="flex"
         justifyContent="center"
         alignItems="center"
       >
-        <SuperImage image={image} offset={[0, 30]} scale={1.1} />
+        <SuperImage
+          image={image}
+          offset={[0, 50]}
+          scale={0.95}
+          aspectRatio="14/13"
+        />
       </Grid>
     </Grid>
   )

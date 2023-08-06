@@ -27,7 +27,7 @@ function MyApp(props: MyAppProps) {
       <ThemeProvider theme={lightTheme}>
         <EmotionThemeProvider theme={lightTheme}>
           <CssBaseline />
-          <main className={inter.className} style={{ padding: "0 8%" }}>
+          <main className={inter.className} style={{ padding: "0 5%" }}>
             <style jsx global>{`
               * {
                 font-family: ${inter.style.fontFamily} !important;
