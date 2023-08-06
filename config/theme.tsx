@@ -44,28 +44,28 @@ const themeCommonOptions = {
     h1: {
       fontWeight: 400,
       fontSize: "40px",
-      "@media (min-width:600px)": {
+      "@media (min-width:1200px)": {
         fontSize: "56px",
       },
     },
     h2: {
       fontWeight: 400,
       fontSize: "32px",
-      "@media (min-width:600px)": {
+      "@media (min-width:1200px)": {
         fontSize: "48px",
       },
     },
     h3: {
       fontWeight: 400,
       fontSize: "26px",
-      "@media (min-width:600px)": {
+      "@media (min-width:1200px)": {
         fontSize: "32px",
       },
     },
     h4: {
       fontWeight: 400,
       fontSize: "24px",
-      "@media (min-width:600px)": {
+      "@media (min-width:1200px)": {
         fontSize: "21px",
       },
     },
@@ -119,6 +119,11 @@ const lightTheme = createTheme(
           },
         },
       },
+      MuiStack: {
+        defaultProps: {
+          useFlexGap: true,
+        },
+      },
       MuiButton: {
         defaultProps: {
           disableRipple: true,
@@ -166,6 +171,11 @@ const darkTheme = createTheme(
               background: "transparent",
             },
           },
+        },
+      },
+      MuiStack: {
+        defaultProps: {
+          useFlexGap: true,
         },
       },
       MuiButton: {

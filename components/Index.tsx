@@ -1,8 +1,9 @@
 import * as React from "react"
 import Head from "next/head"
-import { Container } from "@mui/material"
+import { Container, Stack } from "@mui/material"
 import Hero from "components/index/Hero"
 import { IndexProps } from "types/pagesTypes"
+import LeftRight from "./index/LeftRight"
 
 export default function Index({ data }: IndexProps) {
   const { metadata, body, locale } = data
@@ -19,11 +20,34 @@ export default function Index({ data }: IndexProps) {
         <link rel="canonical" href={`https://www.pulsus.ai/${locale}/`} />
       </Head>
       <Container maxWidth="xl" disableGutters={true}>
-        <Hero
-          primary={body.hero.primary}
-          secondary={body.hero.secondary}
-          button={body.hero.button}
-        />
+        <Stack spacing={{ xs: 4, md: 10, lg: 14 }}>
+          <Hero
+            primary={body.hero.primary}
+            secondary={body.hero.secondary}
+            button={body.hero.button}
+            image={body.hero.image}
+          />
+          {body.attributes.map((item: any, index: number) => {
+            return (
+              <LeftRight
+                key={item.title}
+                primary={item.title}
+                secondary={item.subtitle}
+                image={item.image}
+                shift={index % 2 === 0}
+                superImageProps={
+                  index % 2 === 0
+                    ? {
+                        scale: 0.9,
+                        transformOrigin: "bottom",
+                        aspectRatio: "1/1",
+                      }
+                    : { scale: 0.8, aspectRatio: "1/1" }
+                }
+              />
+            )
+          })}
+        </Stack>
       </Container>
     </>
   )

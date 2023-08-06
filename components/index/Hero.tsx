@@ -6,12 +6,13 @@ interface HeroProps {
   primary: string
   secondary: string
   button: string
+  image: string
 }
 
-export default function Hero({ primary, secondary, button }: HeroProps) {
+export default function Hero({ primary, secondary, button, image }: HeroProps) {
   return (
-    <Grid container spacing={10} minHeight="100vh">
-      <Grid xs={6} display="flex" alignItems="center">
+    <Grid container spacing={10} minHeight={{ lg: "100vh", xl: "auto" }}>
+      <Grid xs={12} md={6} display="flex" alignItems="center">
         <div>
           <Typography
             variant="h1"
@@ -29,8 +30,14 @@ export default function Hero({ primary, secondary, button }: HeroProps) {
           </Button>
         </div>
       </Grid>
-      <Grid xs={6} display="flex" justifyContent="center" alignItems="center">
-        <SuperImage />
+      <Grid
+        xs={12}
+        md={6}
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+      >
+        <SuperImage image={image} offset={[0, 30]} scale={1.1} />
       </Grid>
     </Grid>
   )
