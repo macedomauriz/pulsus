@@ -1,52 +1,13 @@
 import * as React from "react"
-import Head from "next/head"
-import { Container } from "@mui/material"
-import Hero from "components/Hero"
 import { GetStaticProps } from "next"
+import { IndexProps } from "types/pagesTypes"
+import Index from "components/Index"
+import { getData } from "utils/getData"
 
-export default function Index() {
-  const metadata = {
-    title: "EN | Pulsus Title",
-    description: "EN | Pulsus Description",
-  }
-  const locale = "en"
-  const content = {
-    hero: {
-      primary:
-        "Tu nuevo y poderoso asistente personal <mark>impulsado por AI</mark>",
-      secondary:
-        "Pulsus se integra a la perfección en su rutina, anticipándose a sus necesidades y brindando asistencia oportuna.",
-      button: "Únete a la waitlist",
-    },
-  }
-  return (
-    <>
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <link
-          rel="alternate"
-          hrefLang={locale}
-          href={`https://yourdomain.com/${locale}/`}
-        />
-      </Head>
-      <Container maxWidth="xl" disableGutters={true}>
-        <Hero
-          primary={content.hero.primary}
-          secondary={content.hero.secondary}
-          button={content.hero.button}
-        />
-      </Container>
-    </>
-  )
+export default function IndexPage({ data }: IndexProps) {
+  return <Index data={data} />
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = "hola"
-
-  return {
-    props: {
-      data,
-    },
-  }
+  return getData()
 }
