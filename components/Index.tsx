@@ -1,6 +1,6 @@
 import * as React from "react"
 import Head from "next/head"
-import { Container, Stack } from "@mui/material"
+import { Stack } from "@mui/material"
 import Hero from "components/index/Hero"
 import { IndexProps } from "types/pagesTypes"
 import LeftRight from "./index/LeftRight"
@@ -23,6 +23,7 @@ export default function Index({ data }: IndexProps) {
       <Navbar
         button={body.navbar.button}
         notification={body.navbar.notification}
+        locale={locale}
       />
       <Stack spacing={{ xs: 4, md: 10, lg: 14 }}>
         <Hero

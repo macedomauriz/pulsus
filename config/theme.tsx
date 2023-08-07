@@ -38,12 +38,6 @@ const green2 = "rgba(35, 193, 174, 1)"
 const green3 = "rgba(56, 239, 125, 1)"
 
 const themeCommonOptions = {
-  // breakpoints: {
-  //   values: {
-  //     sm: 700,
-  //     md: 900,
-  //   },
-  // },
   typography: {
     htmlFontSize: 16,
     // Headings

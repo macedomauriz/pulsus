@@ -2,12 +2,12 @@ import fsPromises from "fs/promises"
 import path from "path"
 import { LocaleProps } from "types/pagesTypes"
 
-interface GetDataProps {
-  params?: { locale: LocaleProps }
+export interface GetDataProps {
+  locale: LocaleProps
 }
 
-export const getData = async (props?: GetDataProps) => {
-  const locale = props?.params ? props.params.locale : "es"
+export const getData = async (params?: GetDataProps) => {
+  const locale = params?.locale ?? "es"
   const localePath = path.join(
     process.cwd(),
     "public",

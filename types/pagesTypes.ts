@@ -1,4 +1,4 @@
-export type LocaleProps = "en" | "es" | "pr"
+export type LocaleProps = "es" | "en" | "pr"
 
 export interface IndexProps {
   data: {
