@@ -5,6 +5,7 @@ import { ThemeProvider } from "@mui/material/styles"
 import CssBaseline from "@mui/material/CssBaseline"
 import { CacheProvider, EmotionCache } from "@emotion/react"
 import { lightTheme } from "../config/theme"
+import styled from "@emotion/styled"
 import createEmotionCache from "../config/createEmotionCache"
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react"
 import { Inter } from "next/font/google"
@@ -17,6 +18,19 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
 }
 
+const Main = styled.main`
+  padding: 180px 5% 0 5%;
+  > nav {
+    transform: translate(0, -180px);
+  }
+  @media (min-width: 600px) {
+    padding: 140px 5% 0 5%;
+    > nav {
+      transform: translate(0, -140px);
+    }
+  }
+`
+
 function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
   return (
@@ -27,14 +41,14 @@ function MyApp(props: MyAppProps) {
       <ThemeProvider theme={lightTheme}>
         <EmotionThemeProvider theme={lightTheme}>
           <CssBaseline />
-          <main className={inter.className} style={{ padding: "0 5%" }}>
+          <Main className={inter.className}>
             <style jsx global>{`
               * {
                 font-family: ${inter.style.fontFamily} !important;
               }
             `}</style>
             <Component {...pageProps} />
-          </main>
+          </Main>
         </EmotionThemeProvider>
       </ThemeProvider>
     </CacheProvider>

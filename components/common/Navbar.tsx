@@ -5,7 +5,7 @@ import { darkTheme, primaryGradient } from "config/theme"
 import { ThemeProvider } from "@mui/material/styles"
 import { ThemeProvider as EmotionThemeProvider } from "@emotion/react"
 
-const NavbarWrapper = styled.div`
+const NavbarWrapper = styled.nav`
   position: fixed;
   width: 100%;
   left: 0;
