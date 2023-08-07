@@ -1,11 +1,8 @@
 import {
   Button,
   FormControl,
-  InputLabel,
-  MenuItem,
   NativeSelect,
   Paper,
-  Select,
   Typography,
 } from "@mui/material"
 import { locales } from "config/locales"

@@ -5,6 +5,7 @@ import Hero from "components/index/Hero"
 import { IndexProps } from "types/pagesTypes"
 import LeftRight from "./index/LeftRight"
 import Navbar from "./common/Navbar"
+import Footer from "./common/Footer"
 
 export default function Index({ data }: IndexProps) {
   const { metadata, body, locale } = data
@@ -53,6 +54,7 @@ export default function Index({ data }: IndexProps) {
           )
         })}
       </Stack>
+      <Footer title={body.footer.title} subtitle={body.footer.subtitle} />
     </>
   )
 }
