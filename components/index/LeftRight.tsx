@@ -20,14 +20,17 @@ export default function LeftRight({
   return (
     <Grid
       container
-      spacing={{ xs: 2, md: 4, lg: 12 }}
+      spacing={{ xs: 3, sm: 6, lg: 14 }}
       columns={{ lg: 18 }}
-      direction={shift ? "row-reverse" : "row"}
+      direction={{
+        xs: "column-reverse",
+        sm: shift ? "row-reverse" : "row",
+      }}
       alignItems={{ xs: "start", md: "center" }}
     >
       <Grid
         xs={12}
-        md={5}
+        sm={6}
         lg={8}
         display="flex"
         justifyContent="center"
@@ -35,7 +38,7 @@ export default function LeftRight({
       >
         <SuperImage image={image} {...superImageProps} />
       </Grid>
-      <Grid xs={12} md={7} lg={10} display="flex" alignItems="center">
+      <Grid xs={12} sm={6} lg={10} display="flex" alignItems="center">
         <div>
           <Typography
             variant="h2"
