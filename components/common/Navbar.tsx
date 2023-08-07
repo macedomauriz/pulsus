@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { Button, Paper, Typography } from "@mui/material"
 import styled from "@emotion/styled"
 import { darkTheme, primaryGradient } from "config/theme"
@@ -24,6 +23,15 @@ const NavbarWrapper = styled.nav`
   }
 `
 
+const Logo = styled.img`
+  width: 133px;
+  height: 25px;
+  @media (min-width: 600px) {
+    width: 180px;
+    height: 34px;
+  }
+`
+
 interface NavbarProps {
   button: string
   notification: string
@@ -43,12 +51,7 @@ export default function Navbar({ button, notification }: NavbarProps) {
         </EmotionThemeProvider>
       </ThemeProvider>
       <Paper square elevation={0}>
-        <Image
-          src="/common/logo.png"
-          alt="Pulsus logo"
-          width="180"
-          height="34"
-        />
+        <Logo src="/common/logo.png" alt="Pulsus logo" />
         <Button variant="outlined">{button}</Button>
       </Paper>
     </NavbarWrapper>

@@ -11,7 +11,7 @@ interface HeroProps {
 
 export default function Hero({ primary, secondary, button, image }: HeroProps) {
   return (
-    <Grid container spacing={10} columns={{ lg: 20 }}>
+    <Grid container spacing={{ xs: 4, md: 10 }} columns={{ lg: 20 }}>
       <Grid xs={12} md={9} display="flex" alignItems="center">
         <div>
           <Typography

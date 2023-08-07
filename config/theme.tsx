@@ -139,6 +139,13 @@ const lightTheme = createTheme(
             paddingBottom: 8,
             paddingLeft: 22,
             paddingRight: 22,
+            "@media (max-width:600px)": {
+              fontSize: 14,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingLeft: 12,
+              paddingRight: 12,
+            },
           },
         },
         variants: [
@@ -219,6 +226,13 @@ const darkTheme = createTheme(
             paddingLeft: 22,
             paddingRight: 22,
             background: grey[900],
+            "@media (max-width:600px)": {
+              fontSize: 14,
+              paddingTop: 4,
+              paddingBottom: 4,
+              paddingLeft: 18,
+              paddingRight: 18,
+            },
           },
         },
       },
