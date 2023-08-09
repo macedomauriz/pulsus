@@ -6,6 +6,9 @@ import { IndexProps } from "types/pagesTypes"
 import LeftRight from "./index/LeftRight"
 import Navbar from "./common/Navbar"
 import Footer from "./common/Footer"
+import RollingLogos from "./index/RollingLogos"
+import Features from "./index/Features"
+import Learn from "./index/Learn"
 
 export default function Index({ data }: IndexProps) {
   const { metadata, body, locale } = data
@@ -26,13 +29,15 @@ export default function Index({ data }: IndexProps) {
         notification={body.navbar.notification}
         locale={locale}
       />
-      <Stack spacing={{ xs: 4, md: 10, lg: 14 }}>
+      <Stack spacing={{ xs: 10, lg: 14 }}>
         <Hero
           primary={body.hero.primary}
           secondary={body.hero.secondary}
           button={body.hero.button}
           image={body.hero.image}
         />
+        <RollingLogos title={body.press.title} logos={body.press.logos} />
+        <RollingLogos title={body.partners.title} logos={body.partners.logos} />
         {body.attributes.map((item: any, index: number) => {
           return (
             <LeftRight
@@ -53,8 +58,21 @@ export default function Index({ data }: IndexProps) {
             />
           )
         })}
+        <Features
+          title={body.features.title}
+          subtitle={body.features.subtitle}
+          items={body.features.items}
+        />
+        <Learn title={body.learn.title} items={body.learn.items} />
       </Stack>
-      <Footer title={body.footer.title} subtitle={body.footer.subtitle} />
+      <Footer
+        title={body.footer.title}
+        subtitle={body.footer.subtitle}
+        button={body.footer.button}
+        dedication={body.footer.dedication}
+        terms={body.footer.terms}
+        copyright={body.footer.copyright}
+      />
     </>
   )
 }

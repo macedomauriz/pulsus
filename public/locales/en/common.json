@@ -16,11 +16,63 @@
     },
     "press": {
       "title": "Pulsus en la prensa",
-      "logos": ["el-pais.svg", "forbes.svg"]
+      "logos": [
+        {
+          "image": "/press/en/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/press/en/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/press/en/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/press/en/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/press/es/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        }
+      ]
     },
     "partners": {
       "title": "Nuestros socios",
-      "logos": ["mercadolibre.svg", "tiendamia.svg"]
+      "logos": [
+        {
+          "image": "/partners/en/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/partners/en/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/partners/en/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/partners/en/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/partners/en/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        }
+      ]
     },
     "attributes": [
       {
@@ -35,36 +87,36 @@
       }
     ],
     "features": {
-      "title": "Todo lo que puedo hacer con Pulsus",
+      "title": "Todo lo que puedo hacer con <b>Pulsus</b>",
       "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz y asequible",
       "items": [
         {
-          "icon": "icon.svg",
+          "icon": "icon.png",
           "title": "Audio a texto feature",
           "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
         },
         {
-          "icon": "icon.svg",
+          "icon": "icon.png",
           "title": "Recomendaciones",
           "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
         },
         {
-          "icon": "icon.svg",
+          "icon": "icon.png",
           "title": "Asistente local",
           "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
         },
         {
-          "icon": "icon.svg",
+          "icon": "icon.png",
           "title": "Audio a texto feature",
           "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
         },
         {
-          "icon": "icon.svg",
+          "icon": "icon.png",
           "title": "Recomendaciones",
           "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
         },
         {
-          "icon": "icon.svg",
+          "icon": "icon.png",
           "title": "Asistente local",
           "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
         }
@@ -74,18 +126,22 @@
       "title": "Aprende más sobre Pulsus",
       "items": [
         {
+          "icon": "icon.png",
           "title": "Press Article",
           "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi."
         },
         {
+          "icon": "icon.png",
           "title": "Press Article",
           "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi."
         },
         {
+          "icon": "icon.png",
           "title": "Press Article",
           "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi."
         },
         {
+          "icon": "icon.png",
           "title": "Press Article",
           "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi."
         }

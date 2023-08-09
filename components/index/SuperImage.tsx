@@ -1,6 +1,7 @@
 import styled from "@emotion/styled"
 import { primaryGradient } from "config/theme"
 import Image from "next/image"
+import { getFileName } from "utils/getFileName"
 
 const SuperImageWrapper = styled.div<
   Pick<SuperImageProps, "offset" | "scale" | "transformOrigin" | "aspectRatio">
@@ -35,10 +36,6 @@ export default function SuperImage({
   transformOrigin,
   aspectRatio,
 }: SuperImageProps) {
-  const imagePathParts = image.split("/")
-  const filenameWithExtension = imagePathParts[imagePathParts.length - 1]
-  const filename = filenameWithExtension.split(".")[0]
-
   return (
     <SuperImageWrapper
       offset={offset}
@@ -46,7 +43,7 @@ export default function SuperImage({
       transformOrigin={transformOrigin}
       aspectRatio={aspectRatio}
     >
-      <Image src={image} alt={filename} fill />
+      <Image src={image} alt={getFileName(image)} fill />
     </SuperImageWrapper>
   )
 }

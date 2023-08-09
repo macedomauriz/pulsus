@@ -18,14 +18,16 @@ declare module "@mui/material/styles" {
     body?: React.CSSProperties
     subtitle?: React.CSSProperties
   }
+
+  interface BreakpointOverrides {
+    content: true
+  }
 }
 
 declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     body: true
     subtitle?: true
-    h5: false
-    h6: false
     body1: false
     subtitle1: false
     body2: false
@@ -38,6 +40,16 @@ const green2 = "rgba(35, 193, 174, 1)"
 const green3 = "rgba(56, 239, 125, 1)"
 
 const themeCommonOptions = {
+  breakpoints: {
+    values: {
+      content: 1340,
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+    },
+  },
   typography: {
     htmlFontSize: 16,
     // Headings
@@ -63,7 +75,21 @@ const themeCommonOptions = {
       },
     },
     h4: {
-      fontWeight: 400,
+      fontWeight: 500,
+      fontSize: "24px",
+      "@media (min-width:1200px)": {
+        fontSize: "21px",
+      },
+    },
+    h5: {
+      fontWeight: 500,
+      fontSize: "24px",
+      "@media (min-width:1200px)": {
+        fontSize: "21px",
+      },
+    },
+    h6: {
+      fontWeight: 500,
       fontSize: "24px",
       "@media (min-width:1200px)": {
         fontSize: "21px",
@@ -109,6 +135,10 @@ const lightTheme = createTheme(
       MuiTypography: {
         defaultProps: {
           variant: "body",
+          variantMapping: {
+            body: "p",
+            subtitle: "p",
+          },
         },
         styleOverrides: {
           root: {
@@ -122,6 +152,14 @@ const lightTheme = createTheme(
       MuiStack: {
         defaultProps: {
           useFlexGap: true,
+        },
+      },
+      MuiLink: {
+        styleOverrides: {
+          root: {
+            color: green1,
+            textDecorationColor: green1,
+          },
         },
       },
       MuiButton: {
@@ -153,6 +191,9 @@ const lightTheme = createTheme(
             props: { variant: "text" },
             style: {
               color: grey[900],
+              "&:hover": {
+                background: grey[200],
+              },
             },
           },
           {
@@ -162,6 +203,7 @@ const lightTheme = createTheme(
               color: grey[900],
               "&:hover": {
                 border: `2px solid ${grey[900]}`,
+                background: grey[200],
               },
             },
           },
@@ -195,6 +237,10 @@ const darkTheme = createTheme(
       MuiTypography: {
         defaultProps: {
           variant: "body",
+          variantMapping: {
+            body: "p",
+            subtitle: "p",
+          },
         },
         styleOverrides: {
           root: {
@@ -208,6 +254,14 @@ const darkTheme = createTheme(
       MuiStack: {
         defaultProps: {
           useFlexGap: true,
+        },
+      },
+      MuiLink: {
+        styleOverrides: {
+          root: {
+            color: grey[100],
+            textDecorationColor: grey[100],
+          },
         },
       },
       MuiButton: {
@@ -235,6 +289,42 @@ const darkTheme = createTheme(
             },
           },
         },
+        variants: [
+          {
+            props: { variant: "text" },
+            style: {
+              color: grey[100],
+              "&:hover": {
+                background: green1,
+                color: grey[50],
+              },
+            },
+          },
+          {
+            props: { variant: "outlined" },
+            style: {
+              border: `2px solid ${grey[100]}`,
+              background: "transparent",
+              color: grey[100],
+              "&:hover": {
+                border: `2px solid ${grey[100]}`,
+                background: green1,
+              },
+            },
+          },
+          {
+            props: { variant: "contained" },
+            style: {
+              background: grey[100],
+              color: grey[900],
+              fontWeight: 400,
+              "&:hover": {
+                background: green1,
+                color: grey[50],
+              },
+            },
+          },
+        ],
       },
     },
   })

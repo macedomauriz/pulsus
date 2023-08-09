@@ -1,4 +1,4 @@
-import { Typography } from "@mui/material"
+import { Container, Typography } from "@mui/material"
 import Grid from "@mui/material/Unstable_Grid2"
 import SuperImage, { SuperImageProps } from "./SuperImage"
 
@@ -18,39 +18,41 @@ export default function LeftRight({
   superImageProps,
 }: LeftRightProps) {
   return (
-    <Grid
-      container
-      spacing={{ xs: 3, sm: 6, lg: 14 }}
-      columns={{ lg: 18 }}
-      direction={{
-        xs: "column-reverse",
-        sm: shift ? "row-reverse" : "row",
-      }}
-      alignItems={{ xs: "start", md: "center" }}
-    >
+    <Container maxWidth="content">
       <Grid
-        xs={12}
-        sm={6}
-        lg={8}
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
+        container
+        spacing={{ xs: 3, sm: 6, lg: 14 }}
+        columns={{ lg: 18 }}
+        direction={{
+          xs: "column-reverse",
+          sm: shift ? "row-reverse" : "row",
+        }}
+        alignItems={{ xs: "start", md: "center" }}
       >
-        <SuperImage image={image} {...superImageProps} />
+        <Grid
+          xs={12}
+          sm={6}
+          lg={8}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <SuperImage image={image} {...superImageProps} />
+        </Grid>
+        <Grid xs={12} sm={6} lg={10} display="flex" alignItems="center">
+          <div>
+            <Typography
+              variant="h2"
+              gutterBottom
+              dangerouslySetInnerHTML={{ __html: primary }}
+            />
+            <Typography
+              variant="subtitle"
+              dangerouslySetInnerHTML={{ __html: secondary }}
+            />
+          </div>
+        </Grid>
       </Grid>
-      <Grid xs={12} sm={6} lg={10} display="flex" alignItems="center">
-        <div>
-          <Typography
-            variant="h2"
-            gutterBottom
-            dangerouslySetInnerHTML={{ __html: primary }}
-          />
-          <Typography
-            variant="subtitle"
-            dangerouslySetInnerHTML={{ __html: secondary }}
-          />
-        </div>
-      </Grid>
-    </Grid>
+    </Container>
   )
 }
