@@ -13,3 +13,7 @@ export interface IndexProps {
     body: { [key: string]: any }
   }
 }
+
+export interface TermsProps {
+  params: { locale: LocaleProps }
+}
