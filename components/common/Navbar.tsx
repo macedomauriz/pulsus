@@ -59,7 +59,8 @@ const Logo = styled.img`
 const LocaleLink = styled(Link)<{ isLocale: boolean }>`
   text-transform: uppercase;
   margin: 0 10px 0 0;
-  color: ${({ isLocale }) => !isLocale && grey[400]};
+  color: ${({ theme, isLocale }) =>
+    !isLocale ? grey[400] : theme.palette.primary.main};
   text-decoration-color: ${({ isLocale }) => !isLocale && grey[400]};
 `
 

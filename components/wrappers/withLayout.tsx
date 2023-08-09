@@ -1,12 +1,12 @@
-import React, { useContext } from "react"
-import { NotificationContext } from "contexts/NotificationContext"
+import React from "react"
 import Footer from "components/common/Footer"
 import Head from "next/head"
 import Navbar from "components/common/Navbar"
+import { IndexProps } from "types/pagesTypes"
 
-export default function withPage<P>(WrappedComponent: React.ComponentType<P>) {
-  const ComponentWithPage = (props: P) => {
-    // const { isNotificationClosed } = useContext(NotificationContext)
+export default function withLayout(WrappedComponent: any) {
+  const ComponentWithPage = ({ data }: IndexProps) => {
+    const { metadata, locale, body } = data
     return (
       <>
         <Head>
@@ -24,7 +24,7 @@ export default function withPage<P>(WrappedComponent: React.ComponentType<P>) {
           notification={body.navbar.notification}
           locale={locale}
         />
-        <WrappedComponent {...props} />
+        <WrappedComponent {...data} />
         <Footer
           title={body.footer.title}
           subtitle={body.footer.subtitle}
