@@ -5,8 +5,8 @@ import Navbar from "components/common/Navbar"
 import { IndexProps } from "types/pagesTypes"
 
 export default function withLayout(WrappedComponent: any) {
-  const ComponentWithPage = ({ data }: IndexProps) => {
-    const { metadata, locale, body } = data
+  const ComponentWithPage = ({ common, pageContent }: IndexProps) => {
+    const { metadata, locale, body } = common
     return (
       <>
         <Head>
@@ -24,7 +24,7 @@ export default function withLayout(WrappedComponent: any) {
           notification={body.navbar.notification}
           locale={locale}
         />
-        <WrappedComponent {...data} />
+        <WrappedComponent {...pageContent} />
         <Footer
           title={body.footer.title}
           subtitle={body.footer.subtitle}

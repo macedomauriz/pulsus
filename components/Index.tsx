@@ -8,7 +8,8 @@ import Features from "./index/Features"
 import Learn from "./index/Learn"
 import withLayout from "./wrappers/withLayout"
 
-function IndexContent({ body }: IndexProps["data"]) {
+function IndexContent(props: IndexProps["pageContent"]) {
+  const { body } = props
   return (
     <Stack spacing={{ xs: 10, lg: 14 }}>
       <Hero
@@ -51,6 +52,6 @@ function IndexContent({ body }: IndexProps["data"]) {
 
 const WithLayoutIndex = withLayout(IndexContent)
 
-export default function Index({ data }: IndexProps) {
-  return <WithLayoutIndex data={data} />
+export default function Index({ common, pageContent }: IndexProps) {
+  return <WithLayoutIndex common={common} pageContent={pageContent} />
 }

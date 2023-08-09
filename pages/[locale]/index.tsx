@@ -5,8 +5,8 @@ import Index from "components/Index"
 import { getData } from "utils/getData"
 import { locales } from "config/locales"
 
-export default function IndexPage({ data }: IndexProps) {
-  return <Index data={data} />
+export default function IndexPage({ common, pageContent }: IndexProps) {
+  return <Index common={common} pageContent={pageContent} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -20,5 +20,5 @@ interface ParamsProps {
 
 export const getStaticProps: GetStaticProps = async context => {
   const { params } = context as ParamsProps
-  return getData(params)
+  return getData(params, "index")
 }

@@ -6,23 +6,34 @@ export interface GetDataProps {
   locale: LocaleProps
 }
 
-export const getData = async (params?: GetDataProps) => {
-  const locale = params?.locale ?? "es"
-  const localePath = path.join(
+export const getData = async (params: GetDataProps, page: string) => {
+  const localeCommonPath = path.join(
     process.cwd(),
     "public",
     "locales",
-    locale,
+    params.locale,
     "common.json"
   )
 
-  const jsonData = await fsPromises.readFile(localePath)
-  const data = JSON.parse(jsonData.toString())
-  data["locale"] = locale
+  const jsonData = await fsPromises.readFile(localeCommonPath)
+  const common = JSON.parse(jsonData.toString())
+  common["locale"] = params.locale
+
+  const localePagePath = path.join(
+    process.cwd(),
+    "public",
+    "locales",
+    params.locale,
+    `${page}.json`
+  )
+
+  const jsonPageData = await fsPromises.readFile(localePagePath)
+  const pageContent = JSON.parse(jsonPageData.toString())
 
   return {
     props: {
-      data,
+      common,
+      pageContent,
     },
   }
 }

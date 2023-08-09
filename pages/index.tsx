@@ -4,10 +4,10 @@ import { IndexProps } from "types/pagesTypes"
 import Index from "components/Index"
 import { getData } from "utils/getData"
 
-export default function IndexPage({ data }: IndexProps) {
-  return <Index data={data} />
+export default function IndexPage({ common, pageContent }: IndexProps) {
+  return <Index common={common} pageContent={pageContent} />
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  return getData()
+  return getData({ locale: "es" }, "index")
 }
