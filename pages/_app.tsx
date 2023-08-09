@@ -1,4 +1,5 @@
 import * as React from "react"
+import { NotificationProvider } from "contexts/NotificationContext"
 import Head from "next/head"
 import { AppProps } from "next/app"
 import { ThemeProvider } from "@mui/material/styles"
@@ -42,15 +43,17 @@ function MyApp(props: MyAppProps) {
       </Head>
       <ThemeProvider theme={lightTheme}>
         <EmotionThemeProvider theme={lightTheme}>
-          <CssBaseline />
-          <Main className={inter.className}>
-            <style jsx global>{`
-              * {
-                font-family: ${inter.style.fontFamily} !important;
-              }
-            `}</style>
-            <Component {...pageProps} />
-          </Main>
+          <NotificationProvider>
+            <CssBaseline />
+            <Main className={inter.className}>
+              <style jsx global>{`
+                * {
+                  font-family: ${inter.style.fontFamily} !important;
+                }
+              `}</style>
+              <Component {...pageProps} />
+            </Main>
+          </NotificationProvider>
         </EmotionThemeProvider>
       </ThemeProvider>
     </CacheProvider>

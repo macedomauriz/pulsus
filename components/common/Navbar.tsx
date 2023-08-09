@@ -2,7 +2,6 @@ import {
   Button,
   Container,
   FormControl,
-  Link,
   NativeSelect,
   Paper,
   Typography,
@@ -17,24 +16,31 @@ import { ThemeProvider as EmotionThemeProvider } from "@emotion/react"
 import { LocaleProps } from "types/pagesTypes"
 import { grey } from "@mui/material/colors"
 import { useRouter } from "next/router"
+import Link from "next/link"
+import { useContext } from "react"
+import { NotificationContext } from "contexts/NotificationContext"
 
 const NavbarWrapper = styled.nav`
   position: fixed;
   width: 100%;
   left: 0;
   z-index: 3;
-  > div:nth-of-type(1) {
-    background: ${primaryGradient};
-    padding: 10px 20px;
-    text-align: center;
-  }
-  > div:nth-of-type(2) > div {
+`
+
+const Notification = styled.div`
+  background: ${primaryGradient};
+  padding: 10px 20px;
+  text-align: center;
+`
+
+const MainNavbar = styled(Paper)`
+  > div {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
     height: 80px;
-  }
+
 `
 
 const Logo = styled.img`
@@ -80,10 +86,20 @@ const Right = styled.div`
   }
 `
 
-const CrossIcon = styled(FontAwesomeIcon)`
+const CloseButton = styled.button`
   position: absolute;
-  right: 20px;
-  top: 14px;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  @media (min-width: 1120px) {
+    top: 16px;
+    right: 14px;
+  }
 `
 
 interface NavbarProps {
@@ -93,6 +109,8 @@ interface NavbarProps {
 }
 
 export default function Navbar({ button, notification, locale }: NavbarProps) {
+  const { isNotificationClosed, closeNotification } =
+    useContext(NotificationContext)
   const router = useRouter()
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -102,26 +120,30 @@ export default function Navbar({ button, notification, locale }: NavbarProps) {
 
   return (
     <NavbarWrapper>
-      <div>
-        <Container maxWidth="content">
-          <ThemeProvider theme={darkTheme}>
-            <EmotionThemeProvider theme={darkTheme}>
-              <Paper square elevation={0}>
-                <Typography
-                  gutterBottom
-                  dangerouslySetInnerHTML={{ __html: notification }}
-                />
-                <CrossIcon
-                  icon={faXmark}
-                  size="lg"
-                  style={{ color: "white" }}
-                />
-              </Paper>
-            </EmotionThemeProvider>
-          </ThemeProvider>
-        </Container>
-      </div>
-      <Paper square elevation={0}>
+      {!isNotificationClosed && (
+        <Notification>
+          <Container maxWidth="content">
+            <ThemeProvider theme={darkTheme}>
+              <EmotionThemeProvider theme={darkTheme}>
+                <Paper square elevation={0}>
+                  <Typography
+                    gutterBottom
+                    dangerouslySetInnerHTML={{ __html: notification }}
+                  />
+                  <CloseButton onClick={closeNotification}>
+                    <FontAwesomeIcon
+                      icon={faXmark}
+                      size="lg"
+                      style={{ color: "white" }}
+                    />
+                  </CloseButton>
+                </Paper>
+              </EmotionThemeProvider>
+            </ThemeProvider>
+          </Container>
+        </Notification>
+      )}
+      <MainNavbar square elevation={0}>
         <Container maxWidth="content">
           <Logo src="/common/logo.png" alt="Pulsus logo" />
           <Right>
@@ -158,7 +180,7 @@ export default function Navbar({ button, notification, locale }: NavbarProps) {
             <Button variant="outlined">{button}</Button>
           </Right>
         </Container>
-      </Paper>
+      </MainNavbar>
     </NavbarWrapper>
   )
 }

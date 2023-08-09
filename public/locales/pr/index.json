@@ -1,0 +1,155 @@
+{
+  "body": {
+    "navbar": {
+      "button": "Únete a la waitlist",
+      "notification": "Únete a nuestra nueva beta privada, los lugares son limitados"
+    },
+    "hero": {
+      "primary": "Seu nuevo y poderoso asistente personal <mark>impulsado por AI</mark>",
+      "secondary": "Pulsus se integra a la perfección en su rutina, anticipándose a sus necesidades y brindando asistencia oportuna.",
+      "button": "Únete a la waitlist",
+      "image": "/hero/pr/chellphones.png"
+    },
+    "press": {
+      "title": "Pulsus en la prensa",
+      "logos": [
+        {
+          "image": "/press/pr/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/press/pr/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/press/pr/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/press/pr/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/press/pr/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        }
+      ]
+    },
+    "partners": {
+      "title": "Nuestros socios",
+      "logos": [
+        {
+          "image": "/partners/es/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/partners/pr/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/partners/pr/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/partners/pr/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        },
+        {
+          "image": "/partners/pr/image.png",
+          "anchor": "https://www.google.com/",
+          "size": [120, 30]
+        }
+      ]
+    },
+    "attributes": [
+      {
+        "title": "Pulsus puede crear un canal de marketing <b>nuevo, más barato y masivo</b>",
+        "subtitle": "Pulsus ejecutará una búsqueda local en múltiples motores, encontrará contactos de WhatsApp / Facebook / Instagram / teléfono y se comunicará con las empresas solicitando información sobre disponibilidad y precios a través de mensajes, en lenguaje natural.",
+        "image": "/hero/pr/cellphone-straight.png"
+      },
+      {
+        "title": "Apuntamos a facilitar la vida de <b>todos los usuarios, negocios y locales</b>",
+        "subtitle": "Podríamos utilizar nuestro conocimiento, tecnologías y experiencia de campo para continuar desarrollando diferentes productos positivos de alto impacto para las economías emergentes.",
+        "image": "/hero/pr/whatsapp.png"
+      }
+    ],
+    "features": {
+      "title": "Todo lo que puedo hacer <b>con Pulsus</b>",
+      "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz y asequible",
+      "items": [
+        {
+          "icon": "icon.png",
+          "title": "Audio a texto feature",
+          "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
+        },
+        {
+          "icon": "icon.png",
+          "title": "Recomendaciones",
+          "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
+        },
+        {
+          "icon": "icon.png",
+          "title": "Asistente local",
+          "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
+        },
+        {
+          "icon": "icon.png",
+          "title": "Audio a texto feature",
+          "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
+        },
+        {
+          "icon": "icon.png",
+          "title": "Recomendaciones",
+          "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
+        },
+        {
+          "icon": "icon.png",
+          "title": "Asistente local",
+          "subtitle": "En la era de la adopción masiva de IA, cada persona y MIPYME en un mercado emergente merece un asistente personal eficaz."
+        }
+      ]
+    },
+    "learn": {
+      "title": "Aprende más sobre Pulsus",
+      "items": [
+        {
+          "icon": "icon.png",
+          "title": "Press Article",
+          "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi."
+        },
+        {
+          "icon": "icon.png",
+          "title": "Press Article",
+          "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi."
+        },
+        {
+          "icon": "icon.png",
+          "title": "Press Article",
+          "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi."
+        },
+        {
+          "icon": "icon.png",
+          "title": "Press Article",
+          "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi."
+        }
+      ]
+    },
+    "footer": {
+      "title": "Únete a la waitlist",
+      "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi. Suspendisse potenti.",
+      "button": ["Únete a la waitlist", "Waitlist comercios"],
+      "dedication": "Creado con❣️  por ",
+      "terms": "Términos y condiciones",
+      "copyright": "Pulsus all rights reserved®"
+    }
+  }
+}
