@@ -6,7 +6,10 @@ import { IndexProps } from "types/pagesTypes"
 
 export default function withLayout(WrappedComponent: any) {
   const ComponentWithPage = ({ common, pageContent }: IndexProps) => {
-    const { metadata, locale, body } = common
+    const { body } = common
+    const { metadata, locale, page } = pageContent
+
+    const pageUrl = page === "index" ? "" : `${page}/`
     return (
       <>
         <Head>
@@ -15,14 +18,18 @@ export default function withLayout(WrappedComponent: any) {
           <link
             rel="alternate"
             hrefLang={locale}
-            href={`https://www.pulsus.ai/${locale}/`}
+            href={`https://www.pulsus.ai/${locale}/${pageUrl}`}
           />
-          <link rel="canonical" href={`https://www.pulsus.ai/${locale}/`} />
+          <link
+            rel="canonical"
+            href={`https://www.pulsus.ai/${locale}/${pageUrl}`}
+          />
         </Head>
         <Navbar
           button={body.navbar.button}
           notification={body.navbar.notification}
           locale={locale}
+          pageUrl={pageUrl}
         />
         <WrappedComponent {...pageContent} />
         <Footer
@@ -32,6 +39,8 @@ export default function withLayout(WrappedComponent: any) {
           dedication={body.footer.dedication}
           terms={body.footer.terms}
           copyright={body.footer.copyright}
+          locale={locale}
+          pageUrl={pageUrl}
         />
       </>
     )

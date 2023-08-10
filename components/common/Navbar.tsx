@@ -1,3 +1,4 @@
+import React from "react"
 import {
   Button,
   Container,
@@ -56,7 +57,11 @@ const Logo = styled.img`
   }
 `
 
-const LocaleLink = styled(Link)<{ isLocale: boolean }>`
+const e = React.createElement
+const LocaleLink = styled(
+  // eslint-disable-next-line
+  ({ isLocale, ...props }: any) => e(Link, props)
+)`
   text-transform: uppercase;
   margin: 0 10px 0 0;
   color: ${({ theme, isLocale }) =>
@@ -107,16 +112,22 @@ interface NavbarProps {
   button: string
   notification: string
   locale: LocaleProps
+  pageUrl: string
 }
 
-export default function Navbar({ button, notification, locale }: NavbarProps) {
+export default function Navbar({
+  button,
+  notification,
+  locale,
+  pageUrl,
+}: NavbarProps) {
   const { isNotificationClosed, closeNotification } =
     useContext(NotificationContext)
   const router = useRouter()
 
   const handleSelectChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedAnchor = event.target.value
-    router.push(`/${selectedAnchor}`)
+    router.push(`/${selectedAnchor}/${pageUrl}`)
   }
 
   return (
@@ -146,14 +157,16 @@ export default function Navbar({ button, notification, locale }: NavbarProps) {
       )}
       <MainNavbar square elevation={0}>
         <Container maxWidth="content">
-          <Logo src="/common/logo.png" alt="Pulsus logo" />
+          <Link href={`/${locale}`}>
+            <Logo src="/common/logo.png" alt="Pulsus logo" />
+          </Link>
           <Right>
             <div>
               {locales.map(item => {
                 return (
                   <LocaleLink
-                    key={item}
-                    href={`/${item}`}
+                    key={`/${item}/${pageUrl}`}
+                    href={`/${item}/${pageUrl}`}
                     isLocale={item === locale}
                   >
                     <Typography>{item}</Typography>

@@ -8,8 +8,7 @@ import Features from "./index/Features"
 import Learn from "./index/Learn"
 import withLayout from "./wrappers/withLayout"
 
-function IndexContent(props: IndexProps["pageContent"]) {
-  const { body } = props
+function IndexContent({ body }: IndexProps["pageContent"]) {
   return (
     <Stack spacing={{ xs: 10, lg: 14 }}>
       <Hero

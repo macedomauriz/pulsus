@@ -17,7 +17,6 @@ export const getData = async (params: GetDataProps, page: string) => {
 
   const jsonData = await fsPromises.readFile(localeCommonPath)
   const common = JSON.parse(jsonData.toString())
-  common["locale"] = params.locale
 
   const localePagePath = path.join(
     process.cwd(),
@@ -29,6 +28,8 @@ export const getData = async (params: GetDataProps, page: string) => {
 
   const jsonPageData = await fsPromises.readFile(localePagePath)
   const pageContent = JSON.parse(jsonPageData.toString())
+  pageContent["locale"] = params.locale
+  pageContent["page"] = page
 
   return {
     props: {

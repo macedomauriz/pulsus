@@ -5,12 +5,26 @@ import { locales } from "config/locales"
 import TermsEn from "../../public/locales/en/terms.mdx"
 import TermsEs from "../../public/locales/es/terms.mdx"
 import TermsPr from "../../public/locales/pr/terms.mdx"
+import withLayout from "components/wrappers/withLayout"
+import { getData } from "utils/getData"
+import { Container } from "@mui/material"
 
-export default function TermsPage({ params }: TermsProps) {
-  const { locale } = params
-  if (locale === "en") return <TermsEn />
-  if (locale === "es") return <TermsEs />
-  if (locale === "pr") return <TermsPr />
+function TermsContent(props: TermsProps["pageContent"]) {
+  const { locale } = props
+
+  return (
+    <Container maxWidth="content" sx={{ pb: 7 }}>
+      {locale === "en" && <TermsEn />}
+      {locale === "es" && <TermsEs />}
+      {locale === "pr" && <TermsPr />}
+    </Container>
+  )
+}
+
+const WithLayoutTerms = withLayout(TermsContent)
+
+export default function TermsPage({ common, pageContent }: TermsProps) {
+  return <WithLayoutTerms common={common} pageContent={pageContent} />
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
@@ -24,9 +38,5 @@ interface ParamsProps {
 
 export const getStaticProps: GetStaticProps = async context => {
   const { params } = context as ParamsProps
-  return {
-    props: {
-      params,
-    },
-  }
+  return getData(params, "terms")
 }

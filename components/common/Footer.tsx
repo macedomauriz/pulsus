@@ -11,28 +11,30 @@ import { Button, Container, Link, Typography } from "@mui/material"
 import { grey } from "@mui/material/colors"
 import DarkModeWrapper from "components/wrappers/DarkModeWrapper"
 import { primaryGradient } from "config/theme"
+import { LocaleProps } from "types/pagesTypes"
 
 const socialMedia = [
   {
     icon: faTwitter,
-    href: "https://www.linkedin.com/in/macedomauriz/",
+    href: "https://twitter.com/PulsusAI",
   },
   {
     icon: faLinkedinIn,
-    href: "https://www.linkedin.com/in/macedomauriz/",
+    href: "linkedin-link",
   },
   {
     icon: faInstagram,
-    href: "https://www.linkedin.com/in/macedomauriz/",
+    href: "instagram-link",
   },
   {
     icon: faEnvelope,
-    href: "https://www.linkedin.com/in/macedomauriz/",
+    href: "mailto:pulsus@mail.com",
   },
 ]
 
-const FooterWrapper = styled.footer`
-  background: ${grey[200]};
+// Footer background must be handeled better when page be systematized
+const FooterWrapper = styled.footer<{ backgroundColor?: any }>`
+  background: ${({ backgroundColor }) => backgroundColor};
   > div {
     background: ${primaryGradient};
     border-radius: 64px 64px 0 0;
@@ -92,6 +94,8 @@ export interface FooterProps {
   dedication: string
   terms: string
   copyright: string
+  locale: LocaleProps
+  pageUrl: string
 }
 
 export default function Footer({
@@ -101,10 +105,12 @@ export default function Footer({
   dedication,
   terms,
   copyright,
+  locale,
+  pageUrl,
 }: FooterProps) {
   return (
     <DarkModeWrapper>
-      <FooterWrapper>
+      <FooterWrapper backgroundColor={pageUrl !== "terms/" && grey[200]}>
         <div>
           <Container maxWidth="content">
             <div>
@@ -146,7 +152,7 @@ export default function Footer({
                 </div>
                 <div>
                   <Typography variant="subtitle">
-                    <Link href="https://brainlogic.ai/">{terms}</Link>
+                    <Link href={`/${locale}/terms/`}>{terms}</Link>
                   </Typography>
                   <Typography variant="subtitle">{copyright}</Typography>
                 </div>

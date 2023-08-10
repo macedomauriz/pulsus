@@ -1,8 +1,4 @@
 {
-  "metadata": {
-    "title": "Pulsus | Tu Asistente Personal AI en México, Brasil y Uruguay",
-    "description": "Pulsus es un Asistente de Inteligencia Artificial por Whatsapp diseñado para ayudarte a solucionar tareas del mundo real. Pulsus es gratis y podés empezar a usarlo ya."
-  },
   "body": {
     "navbar": {
       "button": "Únete a la waitlist",
@@ -78,12 +74,12 @@
       {
         "title": "Pulsus puede crear un canal de marketing <b>nuevo, más barato y masivo</b>",
         "subtitle": "Pulsus ejecutará una búsqueda local en múltiples motores, encontrará contactos de WhatsApp / Facebook / Instagram / teléfono y se comunicará con las empresas solicitando información sobre disponibilidad y precios a través de mensajes, en lenguaje natural.",
-        "image": "/hero/es/cellphone-straight.png"
+        "image": "/attributes/es/cellphone-straight.png"
       },
       {
         "title": "Apuntamos a facilitar la vida de <b>todos los usuarios, negocios y locales</b>",
         "subtitle": "Podríamos utilizar nuestro conocimiento, tecnologías y experiencia de campo para continuar desarrollando diferentes productos positivos de alto impacto para las economías emergentes.",
-        "image": "/hero/es/whatsapp.png"
+        "image": "/attributes/es/whatsapp.png"
       }
     ],
     "features": {

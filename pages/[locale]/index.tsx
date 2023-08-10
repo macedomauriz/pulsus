@@ -11,7 +11,6 @@ export default function IndexPage({ common, pageContent }: IndexProps) {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = locales.map(locale => ({ params: { locale } }))
-  console.log("paths:", paths)
   return { paths, fallback: false }
 }
 
