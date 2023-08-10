@@ -20,18 +20,8 @@ interface MyAppProps extends AppProps {
 }
 
 const Main = styled.main`
-  padding: 180px 0 0 0;
   overflow: hidden;
   width: 100%;
-  > nav {
-    transform: translate(0, -180px);
-  }
-  @media (min-width: 600px) {
-    padding: 140px 0 0 0;
-    > nav {
-      transform: translate(0, -140px);
-    }
-  }
 `
 
 function MyApp(props: MyAppProps) {
