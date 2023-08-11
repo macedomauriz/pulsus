@@ -90,7 +90,7 @@ const Action = styled.div`
 export interface FooterProps {
   title: string
   subtitle: string
-  button: string[]
+  button: { text: string; href: string }[]
   dedication: string
   terms: string
   copyright: string
@@ -121,8 +121,12 @@ export default function Footer({
                   </Typography>
                   <Typography align="center">{subtitle}</Typography>
                   <Action>
-                    <Button variant="contained">{button[0]}</Button>
-                    <Button variant="outlined">{button[1]}</Button>
+                    <Button href={button[0].href} variant="contained">
+                      {button[0].text}
+                    </Button>
+                    <Button href={button[1].href} variant="outlined">
+                      {button[1].text}
+                    </Button>
                   </Action>
                 </div>
               </div>

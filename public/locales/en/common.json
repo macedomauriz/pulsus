@@ -146,7 +146,16 @@
     "footer": {
       "title": "Únete a la waitlist",
       "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas posuere leo non velit auctor molestie eget at nisi. Suspendisse potenti.",
-      "button": ["Únete a la waitlist", "Waitlist comercios"],
+      "button": [
+        {
+          "text": "Únete a la waitlist",
+          "href": "https://mui.com/material-ui/react-button/"
+        },
+        {
+          "text": "Únete a la waitlist",
+          "href": "https://mui.com/material-ui/react-button/"
+        }
+      ],
       "dedication": "Creado con❣️  por ",
       "terms": "Términos y condiciones",
       "copyright": "Pulsus all rights reserved®"

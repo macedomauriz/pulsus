@@ -109,7 +109,7 @@ const CloseButton = styled.button`
 `
 
 interface NavbarProps {
-  button: string
+  button: { text: string; href: string }
   notification: string
   locale: LocaleProps
   pageUrl: string
@@ -191,7 +191,9 @@ export default function Navbar({
                 </NativeSelect>
               </FormControl>
             </div>
-            <Button variant="outlined">{button}</Button>
+            <Button href={button.href} variant="outlined">
+              {button.text}
+            </Button>
           </Right>
         </Container>
       </MainNavbar>

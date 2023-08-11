@@ -49,7 +49,11 @@ export default function Hero({ primary, secondary, button, image }: HeroProps) {
               gutterBottom
               dangerouslySetInnerHTML={{ __html: secondary }}
             />
-            <Button variant="contained" sx={{ mt: 4 }}>
+            <Button
+              variant="contained"
+              sx={{ mt: 4 }}
+              href="https://mui.com/material-ui/react-button/"
+            >
               {button}
             </Button>
           </TextContainer>
