@@ -13,7 +13,7 @@ function TermsContent(props: TermsProps["pageContent"]) {
   const { locale } = props
 
   return (
-    <Container maxWidth="content" sx={{ pb: 7 }}>
+    <Container maxWidth="content">
       {locale === "en" && <TermsEn />}
       {locale === "es" && <TermsEs />}
       {locale === "pr" && <TermsPr />}

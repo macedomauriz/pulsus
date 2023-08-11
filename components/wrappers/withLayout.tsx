@@ -8,9 +8,9 @@ import { NotificationContext } from "contexts/NotificationContext"
 
 const ComponentWrapper = styled.main<{ fill: number }>`
   > div {
-    padding: ${({ fill }) => `${fill}px 0 0 0`};
+    padding-top: ${({ fill }) => `${fill}px`};
     @media (min-width: 600px) {
-      padding: ${({ fill }) => `${fill - 40}px 0 0 0`};
+      padding-top: ${({ fill }) => `${fill - 40}px`};
     }
   }
 `
